@@ -39,6 +39,7 @@ public class MensajeRS {
     public String asTexto() {
         Integer longitud = this.cuerpo.asTexto().length();
         this.cabecera.setLongitudCuerpo(longitud.toString());
+        this.cabecera.setVerificacion(this.cuerpo.asTexto());
         return this.cabecera.asTexto() + this.cuerpo.asTexto();
     }
 }

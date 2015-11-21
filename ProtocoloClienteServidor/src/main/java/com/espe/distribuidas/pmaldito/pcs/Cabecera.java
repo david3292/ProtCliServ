@@ -95,7 +95,6 @@ public class Cabecera {
         this.setIdMensaje(idMensaje);
         sb.append(this.idMensaje);
         sb.append(this.getLongitudCuerpo());
-        this.setVerificacion(sb.toString());
         sb.append(this.getVerificacion());
         return sb.toString();
 
