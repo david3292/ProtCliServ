@@ -6,6 +6,7 @@
 package com.espe.distribuidas.pmaldito.test;
 
 import com.espe.distribuidas.pmaldito.cliente.InformacionClienteRQ;
+import com.espe.distribuidas.pmaldito.cliente.InformacionClienteRS;
 import com.espe.distribuidas.pmaldito.originador.Originador;
 import com.espe.distribuidas.pmaldito.pcs.Mensaje;
 import com.espe.distribuidas.pmaldito.pcs.MensajeRQ;
@@ -32,16 +33,22 @@ public class Test {
         
 //---------------Respuesta autenticacion usuario--------------------------------        
         AutenticacionRS autrs = new AutenticacionRS();
-        autrs.build("RQ192.168.1.103@B0000020151121111456325INSERTABDD0002e0aa021e21dddbd6d8cecec71e9cf564OKO");        
+        autrs.build("RQ192.168.1.103@B0000020151121111456325INSERTABDD0002e0aa021e21dddbd6d8cecec71e9cf564OK");        
         MensajeRS mautrs = new MensajeRS(Originador.BASE_DATOS, Mensaje.AUTENTIC_USER);
         mautrs.setCuerpo(autrs);
         System.out.println("Respuesta Autenticacion" + mautrs.asTexto());
         
 //---------------Peticion informacion usuario--------------------------------        
-        validaClienteRQ vcrq = new validaClienteRQ("1717965691");
-        MensajeRS mvcrq = new MensajeRS(Originador.CLIENTE, Mensaje.VALIDA_CLIENT);
-        mvcrq.setCuerpo(vcrq);
-        System.out.println("Peticion Valida Cliente" + mvcrq.asTexto());
+        InformacionClienteRQ infcrq = new InformacionClienteRQ();
+        infcrq.setTipoDocumento(InformacionClienteRQ.CEDULA);
+        infcrq.setValor("1717965691");
+        MensajeRQ minfcrq = new MensajeRQ(Originador.CLIENTE, Mensaje.INFO_CLIENT);
+        minfcrq.setCuerpo(infcrq);
+        System.out.println("Peticion informacion Cliente" + minfcrq.asTexto());
+        
+//---------------Peticion informacion usuario--------------------------------        
+//        InformacionClienteRS infcrs = new InformacionClienteRS();
+//        infcrs.build("RQ192.168.1.103@B0000020151121111456325INSERTABDD0002e0aa021e21dddbd6d8cecec71e9cf564OK");
         
 //-----------------------------------------------------------------------------
         InformacionClienteRQ ic = new InformacionClienteRQ();

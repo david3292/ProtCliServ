@@ -17,15 +17,12 @@ public class AutenticacionRS implements Cuerpo {
     private static final String CORRECTO = "OK";
     private static final String INCORRECTO = "NO";
     
-    private String message = "";
+    private String message;
 
     public void build(String string) {
-        if (string.length() == 87) {
-            if (Mensaje.validaHash(string)) {
-                this.message = AutenticacionRS.CORRECTO;
-            }else{
-                this.message = AutenticacionRS.INCORRECTO;
-            }
+        if (string.length() == 87 && Mensaje.validaHash(string)) {
+            this.message = string.substring(85, 87);
+            this.message = this.message.equals(AutenticacionRS.CORRECTO)? AutenticacionRS.CORRECTO : AutenticacionRS.INCORRECTO;
         }else
             this.message = AutenticacionRS.INCORRECTO;
     }

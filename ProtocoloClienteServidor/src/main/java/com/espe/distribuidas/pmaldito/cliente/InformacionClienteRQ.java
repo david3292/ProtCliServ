@@ -14,6 +14,10 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class InformacionClienteRQ implements Cuerpo{
     
+    public static final String PASAPORTE = "PASSP";
+    public static final String CEDULA = "CEDUL";
+    public static final String RUC = "RUC00";
+            
     private String TipoDocumento;
     private String valor;
 

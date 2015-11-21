@@ -44,7 +44,7 @@ public class Cabecera {
     }
 
     public void setOriginador(String originador) {
-        this.originador = StringUtils.leftPad(originador, 20, "0");;
+        this.originador = StringUtils.leftPad(originador, 20, "0");
     }
 
     public String getFecha() {
