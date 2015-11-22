@@ -15,8 +15,9 @@ public class IngresarProductoRQ implements Cuerpo{
     
     private int codigo;
     private String nombre;
+    private String cantidad;
     private double costoUnitario;
-    private String descripcion;
+    
 
     public int getCodigo() {
         return codigo;
@@ -42,17 +43,17 @@ public class IngresarProductoRQ implements Cuerpo{
         this.costoUnitario = costoUnitario;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getCantidad() {
+        return cantidad;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     @Override
     public String toString() {
-        return "IngresarProductoRQ{" + "codigo=" + codigo + ", nombre=" + nombre + ", costoUnitario=" + costoUnitario + ", descripcion=" + descripcion + '}';
+        return "IngresarProductoRQ{" + "codigo=" + codigo + ", nombre=" + nombre + ", costoUnitario=" + costoUnitario + ", descripcion=" + cantidad + '}';
     }
 
     @Override
@@ -61,7 +62,7 @@ public class IngresarProductoRQ implements Cuerpo{
         sb.append("_").append(this.codigo);
         sb.append("-").append(this.nombre);
         sb.append("-").append(this.costoUnitario);
-        sb.append("-").append(this.descripcion);
+        sb.append("-").append(this.cantidad);
         return sb.toString();
     }
     

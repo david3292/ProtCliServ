@@ -45,7 +45,7 @@ public class InformacionClienteRQ implements Cuerpo{
     @Override
     public String asTexto() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.TipoDocumento);
+        //sb.append(this.TipoDocumento);
         sb.append(this.valor);
         return sb.toString();
     }
