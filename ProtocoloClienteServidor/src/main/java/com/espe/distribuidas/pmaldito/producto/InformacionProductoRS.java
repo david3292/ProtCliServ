@@ -22,6 +22,7 @@ public class InformacionProductoRS implements Cuerpo{
         this.datos = string;
         if(Mensaje.validaHash(string)){
             this.resultado = string.substring(85, 88);
+            this.datos = string.substring(85);
             this.resultado = this.resultado.equals(InformacionProductoRS.CORRECTO)?InformacionProductoRS.CORRECTO:InformacionProductoRS.INCORRECTO;
         }else
             this.resultado = InformacionProductoRS.INCORRECTO;

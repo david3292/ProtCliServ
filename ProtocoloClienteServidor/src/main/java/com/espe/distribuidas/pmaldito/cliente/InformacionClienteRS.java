@@ -23,7 +23,7 @@ public class InformacionClienteRS implements Cuerpo{
         if(Mensaje.validaHash(cadena)){
             this.resultado = cadena.substring(85, 88);
             if(this.resultado.equals(InformacionClienteRS.CORRECTO))
-                this.datos = cadena;
+                this.datos =  cadena.substring(85);
             else
                 this.resultado = InformacionClienteRS.INCORRECTO;
         }
